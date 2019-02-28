@@ -21,9 +21,12 @@ Class UserController extends BaseController
 			case 'delete' :
 				$this->delete();
 				break;
-				case 'create' :
+			case 'create' :
 				$this->create();
 				break;
+            case 'store' :
+                $this->store();
+                break;
 			case 'default' :
 				return 'No action';
 				break;
@@ -46,9 +49,6 @@ Class UserController extends BaseController
 
 	public function create()
 	{
-		$id = $_REQUEST['id'];
-		$user = User::findById($id);
-		var_dump($user);
 		require_once ROOT . '/views/user/create.php';
 	}
 
@@ -73,6 +73,19 @@ Class UserController extends BaseController
 
 		header('location: index.php?method=index');
 	}
+
+    public function store()
+    {
+        $userData = [
+            'name' => $_REQUEST['name'],
+            'age' => $_REQUEST['age'],
+            'occupation' => $_REQUEST['occupation'],
+        ];
+
+        User::create($userData);
+
+        header('location: index.php?method=index');
+    }
 
 }
 

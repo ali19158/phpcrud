@@ -47,6 +47,9 @@
                 </div>
                 <div class="user-dashboard">
                     <h1>Hello, JS</h1>
+                    <a href="?method=create">
+                        <button class="btb btn-success">Create</button>
+                    </a>
                     <table id="usersTable" class="display" style="width:100%">
                         <thead>
                             <tr>
@@ -76,7 +79,6 @@
                         <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <a href="?method=create&id=<?php echo $index; ?>">Create</a>
                 </div>
             </div>
         </div>
