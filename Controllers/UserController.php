@@ -18,6 +18,12 @@ Class UserController extends BaseController
 			case 'update' :
 				$this->update();
 				break;
+			case 'delete' :
+				$this->delete();
+				break;
+				case 'create' :
+				$this->create();
+				break;
 			case 'default' :
 				return 'No action';
 				break;
@@ -37,6 +43,23 @@ Class UserController extends BaseController
 		var_dump($user);
 		require_once ROOT . '/views/user/edit.php';
 	}
+
+	public function create()
+	{
+		$id = $_REQUEST['id'];
+		$user = User::findById($id);
+		var_dump($user);
+		require_once ROOT . '/views/user/create.php';
+	}
+
+	public function delete() 
+	{
+		$id = $_REQUEST['id'];
+		$user = User::findById($id);
+		//$user = User::deleteById($id);
+		var_dump($user);
+		require_once ROOT . '/views/user/delete.php';
+	} 
 
 	public function update()
 	{

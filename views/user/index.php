@@ -54,7 +54,8 @@
                                 <th>Name</th>
                                 <th>Age</th>
                                 <th>Occupation</th>
-                                <th>Action</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -68,10 +69,14 @@
                                 <td>
                                     <a href="?method=edit&id=<?php echo $index; ?>">Edit</a>
                                 </td>
+                                <td>
+                                    <a href="?method=delete&id=<?php echo $index; ?>">Delete</a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <a href="?method=create&id=<?php echo $index; ?>">Create</a>
                 </div>
             </div>
         </div>

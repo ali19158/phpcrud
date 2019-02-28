@@ -46,11 +46,15 @@
                     </header>
                 </div>
                 <div class="user-dashboard">
-                    <h1>EDit user</h1>
+                    <h1>Edit user</h1>
                     <?php if($user == null) { echo 'not found'; } else { ?>
 
                         <form action="?method=update" method="POST">
-                            <input type='hidden' name='id' value="<?php echo $id;?>">
+                        <input type='hidden' name='id' value="<?php echo $id;?>">
+
+                           <!-- <input type='hidden' name='_method' value="PUT">
+                            <input type='hidden' name='_method' value="DELETE">-->
+
                             <div class="form-group">
                                 <label for="name">Name:</label>
                                 <input name="name" type="text" class="form-control" id="name" value="<?php echo $user->name;?>">
