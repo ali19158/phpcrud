@@ -47,30 +47,22 @@
                 </div>
                 <div class="user-dashboard">
                     <h1>Create user</h1>
-                    <?php if($user == null) { echo 'not found'; } else { ?>
+                    <form action="?method=store" method="POST">
 
-                        <form action="?method=update" method="POST">
-                        
-
-                            <input type='hidden' name='_method' value="PUT">
-                           <!-- <input type='hidden' name='_method' value="DELETE">-->
-
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input name="name" type="text" class="form-control" id="name" value="">
-                            </div>
-                            <div class="form-group">
-                                <label for="age">Age:</label>
-                                <input name="age" type="text" class="form-control" id="age" value="">
-                            </div>
-                            <div class="form-group">
-                                <label for="occupation">Occupation:</label>
-                                <input name="occupation" type="text" class="form-control" id="occupation" value="">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-
-                    <?php } ?>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input name="name" type="text" class="form-control" id="name" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input name="age" type="text" class="form-control" id="age" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation">Occupation:</label>
+                            <input name="occupation" type="text" class="form-control" id="occupation" value="">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>

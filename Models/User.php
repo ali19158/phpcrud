@@ -99,4 +99,22 @@ curl_setopt_array($curl, )
         return false;
     }
 
+    public static function create($userData) {
+
+        $url_params = '?name=' . $userData['name'] . '&occupation=' . $userData['occupation'] . '&age=' . $userData['age'];
+        $curl = curl_init();
+        curl_setopt_array($curl, [
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => self::API_URL . $url_params,
+            CURLOPT_CUSTOMREQUEST => 'PUT'
+        ]);
+        $resp = curl_exec($curl);
+        curl_close($curl);
+
+        if(empty($resp)) return true;
+
+        return false;
+    }
+
+
 }
